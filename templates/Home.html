@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Home - Welcome to STAYFIT</title>
+<link rel = "icon" href ="{{url_for('static', filename = 'titleicon.jpg')}}" type = "image/x-icon">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<style>
+body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
+.w3-row-padding img {margin-bottom: 12px}
+/* Set the width of the sidebar to 120px */
+.w3-sidebar {width: 120px;background: #222;}
+/* Add a left margin to the "page content" that matches the width of the sidebar (120px) */
+#main {margin-left: 120px}
+/* Remove margins from "page content" on small screens */
+
+</style>
+</head>
+<body class="w3-black">
+
+<!-- Icon Bar (Sidebar - hidden on small screens) -->
+<nav class="w3-sidebar w3-bar-block w3-small w3-hide-small w3-center">
+  <!-- Avatar image in top left corner -->
+  <img src="https://thumbs.dreamstime.com/b/running-man-icon-isolated-black-background-simple-logo-161602065.jpg" style="width:100%">
+  <a href="/" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
+  <i class="large material-icons">home</i>
+    <p>HOME</p>
+  </a>
+  <a href="/trackers" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
+    <i class="large material-icons">directions_run</i>
+    <p>TRACKERS</p>
+  </a>
+  <a href="/user/login" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
+    <i class="large material-icons">vpn_key</i>
+    <p>LOGIN</p>
+  </a>
+  <a href="/user/signup" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
+    <i class="large material-icons">add</i>
+    <p>SIGN UP</p>
+  </a>
+</nav>
+<!-- Page Content -->
+<div class="w3-padding-large" id="main">
+  <!-- Header/Home -->
+  <header class="w3-container w3-padding-32 w3-center w3-black" id="home">
+    <h1 class="w3-jumbo"><span class="w3-hide-small">STAY-FIT</span></h1>
+    <h5><p>The Ultimate Quantified Self App </p></h5>
+    <img src="https://www.itl.cat/pngfile/big/37-371196_hd-fitness-wallpaper-5-background-wallpaper.jpg" alt="boy" class="w3-image" width="992" height="1108">
+  </header>
+  <!-- About Section -->
+  <div class="w3-content w3-justify w3-text-grey w3-padding-64" id="about">
+    <h2 class="w3-text-light-grey">App Description</h2>
+    <hr style="width:200px" class="w3-opacity">
+    <h3><p>Definition</p></h3>
+    <p>
+    Apps are small, specialized programs (applications) designed to be user-friendly on a PC or any other device. Fitness apps are designed specifically to assist with exercise, running , body temperature and other types of physical training or related fitness topics.
+    </p>
+    <h3>Purpose</h3>
+The purpose of a fitness app is to provide the user with instructions and examples of one or more types of exercise, physical activity or some other fitness topic.
+Many fitness apps are available to download from the internet.
+Some are used to count calories, others record statistics on workouts or collect data on walks, runs, and bike rides.
+Out fitness app connects the user to a systematic UI to help with areas of concerns when using a specific fitness routine or just generally with workouts.
+Further, Out fitness app provides a coordinated trackers which helps the user in well being i.e.Mood Tracker </p>
+ <!-- About Developer Section -->
+  <div class="w3-padding-64 w3-content w3-text-grey" id="abtdev">
+    <h2 class="w3-text-light-grey">About Developer</h2>
+    <h3 class="w3-text-light-grey">Prayag Brahmbhatt</h3>
+    <h4 class="w3-text-light-grey">Student , IIT Madras</h4>
+    <hr style="width:200px" class="w3-opacity">
+
+    <div class="w3-section">
+      <p><i class="fa fa-map-marker fa-fw w3-text-white w3-xxlarge w3-margin-right"></i> Ahmedabad , India</p>
+      <p><i class="fa fa-phone fa-fw w3-text-white w3-xxlarge w3-margin-right"></i> Phone: +91 XxXxXxXxX</p>
+      <p><i class="fa fa-envelope fa-fw w3-text-white w3-xxlarge w3-margin-right"> </i> <a href="mailto:21f1005013@student.onlinedegree.iitm.ac.in" style="text-decoration: none";>Email: 21f1005013@student.onlinedegree.iitm.ac.in</a></p>
+    </div><br>
+    <h3><p>Thanks For Visiting</p></h3>
+    <h5><p>Note : All the right of templates , bootstapes belongs to their respective owners. This project is only for study purpose .</p></h5>
+
+  <!-- End Contact Section -->
+  </div>
+<!-- END PAGE CONTENT -->
+</div>
+
+</body>
+</html>

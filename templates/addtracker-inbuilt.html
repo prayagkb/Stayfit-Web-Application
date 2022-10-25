@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+         button {
+ padding: 0.7em 1.5em;
+ font-size: 16px;
+ text-transform: uppercase;
+ font-family: "Roboto", helvetica, arial, sans-serif;
+ letter-spacing: 2.5px;
+ font-weight: 500;
+ color: #fff;
+ background-color: #000;
+ border: none;
+ border-radius: 30px;
+ box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+ transition: all 0.3s ease 0s;
+ cursor: pointer;
+ outline: none;
+}
+
+button:hover {
+ background-color: #A9A9A9;
+ box-shadow: 0px 15px 20px rgba(46, 229, 157, 0.4);
+ color: #000;
+ transform: translateY(-7px);
+}
+
+button:active {
+ transform: translateY(-1px);
+}
+button2 {
+ padding: 0.7em 1.5em;
+ font-size: 16px;
+ text-transform: uppercase;
+ font-family: "Roboto", helvetica, arial, sans-serif;
+ letter-spacing: 2.5px;
+ font-weight: 500;
+ color: #A9A9A9;
+ background-color: #A9A9A9;
+ border: none;
+ border-radius: 30px;
+ box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+ transition: all 0.3s ease 0s;
+ cursor: pointer;
+ outline: none;
+}
+
+button2:hover {
+ background-color: #A9A9A9;
+ box-shadow: 0px 15px 20px rgba(46, 229, 157, 0.4);
+ color: #000;
+ transform: translateY(-7px);
+}
+
+button2:active {
+ transform: translateY(-1px);
+}
+</style>
+<title>Add Tracker</title>
+<link rel = "icon" href ="{{url_for('static', filename = 'titleicon.jpg')}}" type = "image/x-icon">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="{{url_for('static', filename = 'dbcss.css')}}">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<style>
+body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
+.w3-row-padding img {margin-bottom: 12px}
+/* Set the width of the sidebar to 120px */
+.w3-sidebar {width: 120px;background: #222;}
+/* Add a left margin to the "page content" that matches the width of the sidebar (120px) */
+#main {margin-left: 120px}
+/* Remove margins from "page content" on small screens */
+
+</style>
+</head>
+<body class="w3-dark-grey">
+<script type="text/javascript">
+        $(document).ready(function() {
+            $("input[name$='radiobuttonname']").click(function() {
+                var test = $(this).val();
+               
+                $("div.desc").hide();
+                if(test == 'inbuilt'){
+                  
+                    $("#inbuilt").show();
+                }else if(test == 'user-defined'){
+                    $("#user-defined").show();
+                }
+            });
+        });
+
+</script>
+<!-- Icon Bar (Sidebar - hidden on small screens) -->
+<nav class="w3-sidebar w3-bar-block w3-small w3-hide-small w3-center">
+  <!-- Avatar image in top left corner -->
+  <img src="https://thumbs.dreamstime.com/b/running-man-icon-isolated-black-background-simple-logo-161602065.jpg" style="width:100%">
+  <a href="/{{data1['userid']}}/dashboard" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
+    <i class="large material-icons">home</i>
+      <p>HOME</p>
+    </a>
+    <a href="/{{data1['userid']}}/logout" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
+      <i class="large material-icons">exit_to_app</i>
+        <p>LOGOUT</p>
+      </a>
+</nav>
+<div class="w3-padding-large" id="main">
+  <!-- Header/Home -->
+  <header class="w3-container w3-padding-32 w3-center w3-dark-grey" id="home">
+    <h1 class="w3-jumbo"><span class="w3-hide-small">STAYFIT APP</span></h1>
+    <h3><p>Welcome {{data1['name']}} to STAYFIT App </p></h3>
+    <h2><p> Add Any of these Inbuilt-Tracker </p></h2>
+    
+    <div class="desc" id="inbuilt">
+        <form action="/{{data1['userid']}}/addtracker/inbuilt" method="POST" id="in_tracker">
+            <input type="checkbox" id="Running" name="trackers" value="2">
+            <label for="vehicle1">Running Tracker</label><br>
+            <input type="checkbox" id="Meditation" name="trackers" value="3">
+            <label for="vehicle2">Meditation Tracker</label><br>
+            <input type="checkbox" id="Mood" name="trackers" value="11">
+            <label for="vehicle3">Mood Tracker</label><br>
+            <input type="checkbox" id="Temperature" name="trackers" value="7">
+            <label for="vehicle3">Temperature Tracker</label><br><br>
+            <button class="w3-button w3-light-grey w3-padding-large" type="submit">
+                <i class="fa fa-sign-in fa-lg"></i> Add Tracker
+            </button>
+        </form>
+    </div>
+</div>

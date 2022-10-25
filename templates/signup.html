@@ -1,0 +1,49 @@
+<title>Sign Up for Free</title>
+<link rel = "icon" href ="{{url_for('static', filename = 'titleicon.jpg')}}" type = "image/x-icon">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<style>
+body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
+.w3-row-padding img {margin-bottom: 12px}
+/* Set the width of the sidebar to 120px */
+.w3-sidebar {width: 120px;background: #222;}
+/* Add a left margin to the "page content" that matches the width of the sidebar (120px) */
+#main {margin-left: 120px}
+/* Remove margins from "page content" on small screens */
+</style>
+</head>
+<body class="w3-black">
+
+<!-- Icon Bar (Sidebar - hidden on small screens) -->
+<nav class="w3-sidebar w3-bar-block w3-small w3-hide-small w3-center">
+  <!-- Avatar image in top left corner -->
+  <img src="https://thumbs.dreamstime.com/b/running-man-icon-isolated-black-background-simple-logo-161602065.jpg" style="width:100%">
+  <a href="/" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
+  <i class="large material-icons">home</i>
+    <p>HOME</p>
+  </a>
+</nav>
+<div class="w3-padding-large" id="main">
+  <!-- Header/Home -->
+  <header class="w3-container w3-padding-32 w3-center w3-black" id="home">
+    <h1 class="w3-jumbo"><span class="w3-hide-small">STAYFIT APP</span></h1>
+    <h3><p>Welcome to STAYFIT App </p></h3>
+<form action="/user/signup" method="POST" id="new_user">
+      <p><input class="w3-input w3-padding-16" type="text" placeholder="Name" required name="Name"></p>
+      <p><input class="w3-input w3-padding-16" type="number" placeholder="Age" required name="Age"></p>
+      <p><input class="w3-input w3-padding-16" type="email" placeholder="Email" required name="Email"></p>
+      <p><input class="w3-input w3-padding-16" type="password" placeholder="Password" required name="Password"></p>
+      <p><input class="w3-input w3-padding-16" type="number" placeholder="Contact Number" required name="contact"></p>
+      <p>
+        <button class="w3-button w3-light-grey w3-padding-large" type="submit"><i class="fa fa-plus fa-lg "></i>  SIGN UP  </button>
+      </p>
+    </form>
+</div>
+
+
+</body>
+</html

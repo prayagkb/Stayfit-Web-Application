@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+         button {
+ padding: 0.7em 1.5em;
+ font-size: 16px;
+ text-transform: uppercase;
+ font-family: "Roboto", helvetica, arial, sans-serif;
+ letter-spacing: 2.5px;
+ font-weight: 500;
+ color: #fff;
+ background-color: #000;
+ border: none;
+ border-radius: 30px;
+ box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+ transition: all 0.3s ease 0s;
+ cursor: pointer;
+ outline: none;
+}
+
+button:hover {
+ background-color: #A9A9A9;
+ box-shadow: 0px 15px 20px rgba(46, 229, 157, 0.4);
+ color: #000;
+ transform: translateY(-7px);
+}
+
+button:active {
+ transform: translateY(-1px);
+}
+button2 {
+ padding: 0.7em 1.5em;
+ font-size: 16px;
+ text-transform: uppercase;
+ font-family: "Roboto", helvetica, arial, sans-serif;
+ letter-spacing: 2.5px;
+ font-weight: 500;
+ color: #A9A9A9;
+ background-color: #A9A9A9;
+ border: none;
+ border-radius: 30px;
+ box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+ transition: all 0.3s ease 0s;
+ cursor: pointer;
+ outline: none;
+}
+
+button2:hover {
+ background-color: #A9A9A9;
+ box-shadow: 0px 15px 20px rgba(46, 229, 157, 0.4);
+ color: #000;
+ transform: translateY(-7px);
+}
+
+button2:active {
+ transform: translateY(-1px);
+}
+</style>
+<title>{{data3}} Page</title>
+<link rel = "icon" href ="{{url_for('static', filename = 'titleicon.jpg')}}" type = "image/x-icon">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="{{url_for('static', filename = 'dbcss.css')}}">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+<style>
+body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
+.w3-row-padding img {margin-bottom: 12px}
+/* Set the width of the sidebar to 120px */
+.w3-sidebar {width: 120px;background: #222;}
+/* Add a center margin to the "page content" that matches the width of the sidebar (120px) */
+#main {margin-center: 120px}
+/* Remove margins from "page content" on small screens */
+</style>
+</head>
+<body class="w3-dark-grey">
+
+<!-- Icon Bar (Sidebar - hidden on small screens) -->
+<nav class="w3-sidebar w3-bar-block w3-small w3-hide-small w3-center">
+  <!-- Avatar image in top center corner -->
+  <img src="https://thumbs.dreamstime.com/b/running-man-icon-isolated-black-background-simple-logo-161602065.jpg" style="width:100%">
+  <a href="/{{data1['userid']}}/dashboard" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
+    <i class="large material-icons">home</i>
+      <p>HOME</p>
+    </a>
+    <a href="/{{data1['userid']}}/logout" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
+      <i class="large material-icons">exit_to_app</i>
+        <p>LOGOUT</p>
+      </a>
+</nav>
+<div class="w3-padding-large" id="main">
+  <!-- Header/Home -->
+  <header class="w3-container w3-padding-32 w3-center w3-dark-grey" id="home">
+    <h1 class="w3-jumbo"><span class="w3-hide-small">STAYFIT APP</span></h1>
+    <h3><p>Welcome {{data1['name']}} to STAYFIT App </p></h3>
+    <h3><p>Tracker Description : {{tracker_dscp}}</p></h3>
+    
+</div>
+
+
+<div class="w3-padding-large" id="main">
+
+<!---<h3>Data Table</h3>-->
+</div>
+{% if data4|length == 0 %}
+<h2 class="w3-padding-32 w3-center">No logs found for {{data3}}</h2>
+{% else %}
+<table class="table-fill">
+<thead>
+<tr>
+<th class="text-center">Log ID</th>
+<th class="text-center">Value</th>
+<th class="text-center">Entries</th>
+<th class="text-center">Note</th>
+<th class="text-center">Actions</th>
+</tr>
+</thead>
+{% for i in data4 %}
+<tbody class="table-hover">
+<tr>
+  <td class="text-left-special">{{i["log_id"]}}</td>
+  <td class="text-center">{{i["log_value"]}}</td>
+  <td class="text-center">{{i["timestamp"]}}</td>
+  <td class="text-center">{{i["log_note"]}}</td>
+  <!--<td class="text-center"><button class="button"><a href="/{{data1['userid']}}/log/{{i['tracker_tid']}}">Add Log</a></i></button></td>-->
+  <td class="text-center"><button><a href="/{{data1['userid']}}/tracker/{{i['tlog_id']}}/log/{{i['log_id']}}/edit"><i class="large material-icons">edit</i></a></button>&nbsp<button><a href="/{{data1['userid']}}/tracker/{{i['tlog_id']}}/log/{{i['log_id']}}/delete"><i class="large material-icons">delete</i></a></button></td>
+</tr>
+{% endfor %}
+{% endif %}
+</tbody>
+</table>
+
+</body>
+</html
